@@ -1,14 +1,23 @@
 CC = clang
 CFLAGS = -Wall -Wextra
 
-# Shared helpers used across exercises.
-# ex1.c provides mod_exp (its main is commented out), utils.c the rest.
-DEPS = utils.c ex1.c
+# Shared helpers (is_prime, russian_peasant_multiplication, mod_exp) live in utils.c.
+DEPS = utils.c
+
+BINS = ex1 ex3 ex4
+
+all: $(BINS)
+
+ex1: ex1.c $(DEPS)
+	$(CC) $(CFLAGS) $^ -o $@
 
 ex3: ex3.c $(DEPS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-clean:
-	rm -f ex3
+ex4: ex4.c $(DEPS)
+	$(CC) $(CFLAGS) $^ -o $@
 
-.PHONY: clean
+clean:
+	rm -f $(BINS)
+
+.PHONY: all clean

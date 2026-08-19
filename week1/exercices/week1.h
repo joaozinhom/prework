@@ -3,6 +3,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+#include <time.h>
 # include <math.h>
 typedef unsigned long long numberlong;
 numberlong russian_peasant_multiplication(numberlong a, numberlong b, numberlong p);

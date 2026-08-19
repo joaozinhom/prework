@@ -33,6 +33,28 @@ numberlong russian_peasant_multiplication(numberlong a, numberlong b, numberlong
 		a = (a * 2) % p;
         b /= 2;
     }
-    
+
     return result;
+}
+
+
+numberlong mod_exp(numberlong base, numberlong exp, numberlong mod)
+{
+	//temporary guard rail i dont think a good solution to solve this yet.
+	if (mod == 0)
+	{
+		return (0);
+	}
+	base = base % mod;
+	numberlong result = 1 % mod;
+	while(exp > 0)
+	{
+		if (exp & 1)
+		{
+			result = russian_peasant_multiplication(result,base,mod);
+		}
+	base  = russian_peasant_multiplication(base, base , mod);
+	exp /= 2;
+	}
+	return (result);
 }
