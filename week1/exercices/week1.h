@@ -6,6 +6,7 @@
 # include <math.h>
 typedef unsigned long long numberlong;
 numberlong russian_peasant_multiplication(numberlong a, numberlong b, numberlong p);
-int is_prime(int num);
+numberlong is_prime(numberlong num);
 numberlong mod_exp(numberlong base, numberlong exp, numberlong mod);
+numberlong mod_inverse(numberlong base, numberlong mod);
 #endif

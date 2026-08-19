@@ -1,11 +1,11 @@
 #include "week1.h"
 
-int is_prime(int num)
+numberlong is_prime(numberlong num)
 {
-	int i = 2;
+	numberlong i = 2;
 	if(num==1 || num==0)
 		return (0);		
-	while(i < num)
+	while(i <= sqrt(num))
 	{
 		if (num % i == 0)
 		{
@@ -29,7 +29,7 @@ numberlong russian_peasant_multiplication(numberlong a, numberlong b, numberlong
             result = (result + a) % p;
         }
         
-        // Double a(and reduces it to not blows up :)!), and halve b
+        // Double a(and reduces it to not blows up!), and halves b
 		a = (a * 2) % p;
         b /= 2;
     }
